@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brou-Kit</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <span class="brand">Brou-Kit</span>
+    <nav>
+      <button class="nav-tab active" data-panel="zoom">Zoom</button>
+      <button class="nav-tab" data-panel="tabs">Tabs</button>
+      <button class="nav-tab" data-panel="search">Search</button>
+    </nav>
+  </header>
+
+  <!-- Panel: Zoom -->
+  <section id="panel-zoom" class="panel active">
+    <div class="zoom-display" id="currentZoom">100%</div>
+
+    <div class="slider-section">
+      <input type="range" id="zoomSlider" min="25" max="500" step="5" value="100" />
+      <div class="slider-labels">
+        <span>25%</span>
+        <span>500%</span>
+      </div>
+    </div>
+
+    <div class="presets">
+      <button class="preset" data-zoom="50">50%</button>
+      <button class="preset" data-zoom="75">75%</button>
+      <button class="preset active" data-zoom="100">100%</button>
+      <button class="preset" data-zoom="125">125%</button>
+      <button class="preset" data-zoom="150">150%</button>
+      <button class="preset" data-zoom="200">200%</button>
+    </div>
+
+    <button id="resetBtn" class="reset-btn">Reset</button>
+  </section>
+
+  <!-- Panel: Tabs -->
+  <section id="panel-tabs" class="panel">
+    <ul id="tabList" class="tab-list"></ul>
+  </section>
+
+  <!-- Panel: Search -->
+  <section id="panel-search" class="panel">
+    <div class="search-input-row">
+      <input type="text" id="searchInput" placeholder="Search in page..." />
+    </div>
+    <div class="search-actions">
+      <button id="searchBtn" class="search-btn-primary">Search</button>
+      <button id="searchClearBtn" class="reset-btn">Clear</button>
+    </div>
+    <span id="searchCount" class="search-count"></span>
+  </section>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
